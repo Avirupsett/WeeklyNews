@@ -59,7 +59,7 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-readTextFile('/file.txt')
+readTextFile('/WeeklyNews/file.txt')
 
 
 // Initialize the news api parameters
