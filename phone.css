@@ -1,0 +1,62 @@
+@media screen and (max-width: 700px) {
+    .search{
+        display: none;
+        visibility: hidden;
+    }
+    .head{
+        font-size: 24px;
+        padding-top: 5px;
+        font-family: 'Dancing Script', cursive;
+        margin: 7px !important;
+    }
+    .magni{
+        display: none;
+        visibility: hidden;
+    }
+    #heading{
+        font-size: 22px;
+    }
+    #sort{
+        font-size: 20px;
+        letter-spacing: 1px !important;
+    }
+    #usort{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 950px){
+    #navigator{
+        display: none;
+        visibility: hidden;
+    }
+    #underline{
+        display: none;
+        visibility: hidden;
+    }
+    #under_navigator{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .subcontainer{
+        width: 390px;
+    }
+    .subcontainer img{
+        width: 352px;
+        height: 220px;
+    }
+
+}
+@media screen and (max-width: 375px) {
+.subcontainer img {
+    width: 300px;
+    height: 200px;
+}
+.subcontainer{
+    width: 340px;
+}
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly News</title>
+</head>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="phone.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<style>
+    #home,#technology,#science,#sports,#entertainment,#health{
+        color:inherit;
+    }
+    #uhome,#utechnology,#uscience,#usports,#uentertainment,#uhealth{
+        visibility: hidden;
+    }
+    #business{
+        color: red;
+    }
+    #ubusiness{
+        visibility: visible;
+    }
+</style>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li id="logo_menu" onclick="dropdown()"></li>
+        <li class="head">Weekly News</li>
+        <ul class='navright'>
+          <li onclick="DarkMode()" id="mode"></li>
+          <li class="search">
+            <input type="search" id="searching2" name="search" onchange="enter()" placeholder="Search News...">
+          </li>
+          <li id="magni" onclick="magni_search()"></li>
+        </ul>
+      </ul>
+      <hr id="un_nav">
+      <div id="myLinks">
+        <div class="inner" style="display:flex;align-items:center; justify-content:center">
+          <input type="search" name="search"  id="searching" onchange="enter()" placeholder="Search News...">
+          <button onclick="search()">Search</button>
+        </div>
+        <div id="inner2" style="display:flex;align-items:center; justify-content:center">
+          <label for="custom-select">Select Country:</label>
+          <div id="custom-select" style="width:200px;">
+            <select id="select-option" onchange="Country_search('business')">
+              <option value="0" >All</option>
+              <option value="ae" id="ae">Arab Emirates</option>
+              <option value="ar" id="ar">Argentina</option>
+              <option value="au" id="au">Australia</option>
+              <option value="be" id="be">Belgium</option>
+              <option value="bg" id="bg">Bulgaria</option>
+              <option value="br" id="br">Brazil</option>
+              <option value="ca" id="ca">Canada</option>
+              <option value="ch" id="ch">Switzerland</option>
+              <option value="cn" id="cn">China</option>
+              <option value="co" id="co">Colombia</option>
+              <option value="cz" id="cz">Czech Republic</option>
+              <option value="de" id="de">Germany</option>
+              <option value="eg" id="eg">Egypt</option>
+              <option value="fr" id="fr">France</option>
+              <option value="gb" id="gb">Great Britain</option>
+              <option value="gr" id="gr">Greece</option>
+              <option value="hk" id="hk">Hong Kong</option>
+              <option value="hu" id="hu">Hungary</option>
+              <option value="id" id="id">Indonesia</option>
+              <option value="ie" id="ie">Ireland</option>
+              <option value="il" id="il">Israel</option>
+              <option value="in" id="in">India</option>
+              <option value="it" id="it">Italy</option>
+              <option value="jp" id="jp">Japan</option>
+              <option value="kr" id="kr">Korea</option>
+              <option value="lt" id="lt">Lithuania</option>
+              <option value="lv" id="lv">Latvia</option>
+            </select>
+          </div>
+          <!-- id ieilin it jpkrlt lv mamxmyngnlnonzphplptrorsrusasesgsiskthtrtwuausveza -->
+        
+        </div>
+        <hr>
+        <a href="/">Home</a>
+        <hr>
+        <a href="/business.html">Business</a>
+        <hr>
+        <a href="/technology.html">Technology</a>
+        <hr>
+        <a href="/science.html">Science</a>
+        <hr>
+        <a href="/sports.html">Sports</a>
+        <hr>
+        <a href="/entertainment.html">Entertainment</a>
+        <hr>
+        <a href="/health.html">Health</a>
+        <hr>
+      </div>
+    </nav>
+  </header>
+  <div id="navigator">
+    <a href="/" ><b id="home">Home</b></a>
+    <div id="pip">|</div>
+    <a href="/business.html"><b id="business">Business</b></a>
+    <div id="pip">|</div>
+    <a href="/technology.html"><b id="technology">Technology</b></a>
+    <div id="pip">|</div>
+    <a href="/science.html"><b id="science">Science</b></a>
+    <div id="pip">|</div>
+    <a href="/sports.html"><b id="sports">Sports</b></a>
+    <div id="pip">|</div>
+    <a href="/entertainment.html"><b id="entertainment">Entertainment</b></a>
+    <div id="pip">|</div>
+    <a href="/health.html"><b id="health">Health</b></a>
+  </div>
+  <div id="underline">
+    <div id="uhome"><b>Home</b></div>
+    <div id="pip2">|</div>
+    <div id="ubusiness"><b>Business</b></div>
+    <div id="pip2">|</div>
+    <div id="utechnology"><b>Technology</b></div>
+    <div id="pip2">|</div>
+    <div id="uscience"><b>Science</b></div>
+    <div id="pip2">|</div>
+    <div id="usports"><b>Sports</b></div>
+    <div id="pip2">|</div>
+    <div id="uentertainment"><b>Entertainment</b></div>
+    <div id="pip2">|</div>
+    <div id="uhealth"><b>Health</b></div>
+  </div>
+  <hr id="under_navigator">
+  <div id="heading">Business News</div>
+   <div id="sort">
+    <a href="#" onclick="popular_news()"><b id="popular">Popular News</b></a>
+    <div id="pip">|</div>
+    <a href="#"  onclick="latest_news(`business`)"><b id="latest">Trending News</b></a>
+   </div>
+   <div id="usort">
+     <div id="upopular">Popular News</div>
+     <div id="pip2">|</div>
+     <div id="ulatest">Trending News</div>
+   </div>
+
+   <section>
+    <div id="loader_container">
+      <div class="loader"></div>
+     </div>
+     <div id="container">
+     
+     </div>
+   </section>
+
+   <div id="container">
+    <footer id="footer">Copyright 2020-2021 &COPY; Avirup Sett</footer>
+   </div>
+
+</body>
+<script src="business_main.js"></script>
+</html>
